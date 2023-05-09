@@ -1,0 +1,29 @@
+---
+- name: Configure Ubuntu Workstation
+  hosts: localhost
+  become: true
+
+  tasks:
+    - name: Install apt packages
+      ansible.builtin.apt:
+        name:
+          - curl
+          - dkms
+          - git
+          - nfs-common
+          - openssh-server
+          - picard
+
+    - name: Install --classic snaps
+      community.general.snap:
+        name:
+          - code
+          - obsidian
+          - powershell
+        classic: true
+
+    - name: Install standard snaps
+      community.general.snap:
+        name:
+          - bw
+          - libreoffice
