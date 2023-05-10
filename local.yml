@@ -9,7 +9,6 @@
         name:
           - curl
           - dkms
-          - git
           - nfs-common
           - openssh-server
           - picard
